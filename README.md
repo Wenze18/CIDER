@@ -124,12 +124,6 @@ python -m cider.generate \
 
 Each mode returns up to eight selected molecular identities per condition. Use `--row_indices` for explicit cache rows. For the manuscript benchmark sampling settings, replace `--rows 8` with `--sample_rows --rows 200 --row_seed 20260507 --seed 42`.
 
-Both modes use the frozen reverse ensemble to score discrete molecular candidates. For a target response $y$ and predicted response $\hat y$, the cycle score is
-
-$$
-L_{\mathrm{cycle}} = \operatorname{MSE}(\hat y,y) + 0.2[1-\cos(\hat y,y)].
-$$
-
 Selection combines chemical utility with within-pool ranks of Pearson correlation, cosine similarity, mean squared error and cycle score. Lower cycle scores indicate better agreement. Resolved sampling and ranking settings are saved alongside the generated CSV. Run `python -m cider.generate --help` for all options.
 
 
