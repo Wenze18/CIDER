@@ -1,0 +1,44 @@
+{
+  "conservative": {
+    "name": "conservative",
+    "generator_ckpts": [
+      "checkpoints/forward/prefix.pt",
+      "checkpoints/forward/neighbor.pt",
+      "checkpoints/forward/retrieval.pt",
+      "checkpoints/forward/wide_prefix.pt",
+      "checkpoints/forward/multipositive_prefix_a_last.pt",
+      "checkpoints/forward/multipositive_prefix_b_last.pt",
+      "checkpoints/forward/multipositive_neighbor_last.pt"
+    ],
+    "fp_ckpt": "checkpoints/forward/fingerprint.pt",
+    "structural_reranker_ckpt": "checkpoints/forward/structural_ranker.pt",
+    "fp_cache": "data/features/fingerprints_2048.pt",
+    "repeat_seeds": "42,7,13,23,31",
+    "candidates_per_generator": 24,
+    "keep": 8,
+    "w_fp": 1.0,
+    "w_nn": 1.5,
+    "w_learned": 1.5,
+    "nn_k": 8,
+    "fp_dim": 2048,
+    "temperature": 0.95,
+    "top_k": 80,
+    "top_p": 0.97
+  },
+  "exploratory": {
+    "name": "exploratory",
+    "generator_ckpt": "checkpoints/forward/exploratory_cvae.pt",
+    "candidates": 64,
+    "keep": 8,
+    "temperature": 0.95,
+    "top_k": 80,
+    "top_p": 0.97,
+    "rank_weights": {
+      "qed": 1.0,
+      "sas": 0.18,
+      "lipinski": 0.25,
+      "novel": 0.35,
+      "source_tanimoto": 0.1
+    }
+  }
+}

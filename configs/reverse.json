@@ -1,0 +1,23 @@
+{
+  "name": "CIDER response ensemble",
+  "weights": {
+    "tabular": 0.7383291721343994,
+    "transformer": 0.19109338521957397,
+    "perceiver": 0.07057744264602661
+  },
+  "tabular_checkpoints": [
+    "checkpoints/reverse/tabular_01.pt",
+    "checkpoints/reverse/tabular_02.pt",
+    "checkpoints/reverse/tabular_03.pt",
+    "checkpoints/reverse/tabular_04.pt",
+    "checkpoints/reverse/tabular_05.pt",
+    "checkpoints/reverse/tabular_06.pt",
+    "checkpoints/reverse/tabular_07.pt",
+    "checkpoints/reverse/tabular_08.pt",
+    "checkpoints/reverse/tabular_09.pt"
+  ],
+  "token_checkpoints": {
+    "transformer": "checkpoints/reverse/transformer.pt",
+    "perceiver": "checkpoints/reverse/perceiver.pt"
+  }
+}

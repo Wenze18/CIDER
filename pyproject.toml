@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cider-molecular-design"
+version = "0.1.0"
+description = "Gene-expression-guided molecular generation and response prediction"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "torch>=2.8,<2.9",
+  "numpy>=1.26,<2.1",
+  "pandas>=2.2,<2.4",
+  "rdkit==2025.9.2",
+  "selfies==2.1.1",
+  "tqdm>=4.66",
+  "scikit-learn>=1.4,<1.7",
+  "scipy>=1.11,<1.14"
+]
+
+[project.optional-dependencies]
+data = ["anndata>=0.10,<0.11", "h5py>=3.10,<4"]
+
+[project.scripts]
+cider-generate = "cider.generate:main"
+cider-reverse = "cider.reverse:main"
+cider-prepare = "cider.prepare:main"
+cider-train = "cider.train:main"
+cider-lincs = "cider.lincs:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
